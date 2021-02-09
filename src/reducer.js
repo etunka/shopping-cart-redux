@@ -18,12 +18,14 @@ export default function appReducer(state = initialState, action) {
         shoppingCartItems: action.payload,
       };
     case actionTypes.addToCart: {
+      const { product, count } = action.payload;
       const itemIndex = state.shoppingCartItems.findIndex(
-        (a) => a.product.id === action.payload.id
+        (a) => a.product.id === product.id
       );
-      // if already in cart +1 on count
+      // if already in cart +count on count
       if (itemIndex >= 0) {
-        state.shoppingCartItems[itemIndex].count++;
+        state.shoppingCartItems[itemIndex].count =
+          state.shoppingCartItems[itemIndex].count + count;
 
         return {
           ...state,
@@ -33,10 +35,7 @@ export default function appReducer(state = initialState, action) {
 
       return {
         ...state,
-        shoppingCartItems: [
-          ...state.shoppingCartItems,
-          { product: action.payload, count: 1 },
-        ],
+        shoppingCartItems: [...state.shoppingCartItems, { product, count }],
       };
     }
     case actionTypes.removeFromCart: {

@@ -19,10 +19,10 @@ export function setShoppingCart(shoppingCartItems) {
   };
 }
 
-export function addToCart(product) {
+export function addToCart(item) {
   return {
     type: actionTypes.addToCart,
-    payload: product,
+    payload: item,
   };
 }
 

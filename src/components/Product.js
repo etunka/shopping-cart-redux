@@ -4,8 +4,9 @@ import * as actions from "../actions";
 import { fixPrice, createOptions } from "../helper";
 import Select from "react-select";
 
+const options = createOptions(1, 5);
 const Product = ({ product, addToCart }) => {
-  const [selectedOption, setSelectedOption] = useState(createOptions(1, 5)[0]);
+  const [selectedOption, setSelectedOption] = useState(options[0]);
 
   return (
     <div className="product flex items-center">
@@ -21,7 +22,7 @@ const Product = ({ product, addToCart }) => {
         </h3>
 
         <Select
-          options={createOptions(1, 5)}
+          options={options}
           defaultValue={selectedOption}
           onChange={setSelectedOption}
           className="w-16"
@@ -30,7 +31,7 @@ const Product = ({ product, addToCart }) => {
         <button
           className="bg-green-700 rounded text-white float-left mt-4 py-2 px-4"
           onClick={() => {
-            addToCart(product);
+            addToCart({ product, count: selectedOption.value });
           }}
         >
           Add to cart
