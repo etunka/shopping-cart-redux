@@ -39,14 +39,14 @@ export default function appReducer(state = initialState, action) {
         ],
       };
     }
-    // case actionTypes.removeFromCart:
-    //   return {
-    //     ...state,
-    //     shoppingCartItems: [
-    //         ...state.shoppingCartItems,
-
-    //     ]
-    //   };
+    case actionTypes.removeFromCart: {
+      return {
+        ...state,
+        shoppingCartItems: state.shoppingCartItems.filter(
+          (a) => a.product.id !== action.payload.id
+        ),
+      };
+    }
 
     default:
       return state;

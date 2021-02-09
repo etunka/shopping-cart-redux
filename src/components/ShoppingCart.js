@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 import { fixPrice } from "../helper";
-import { ShoppingCartItem } from "./ShoppingCartItem";
+import ShoppingCartItem from "./ShoppingCartItem";
 
 const calculateTotal = (arr) => {
   return arr.reduce((total, b) => total + b.product.price * b.count, 0);
