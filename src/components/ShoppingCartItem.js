@@ -22,7 +22,7 @@ const ShoppingCartItem = ({ item, removeFromCart }) => {
           className="text-sm text-red-700 mt-4"
           onClick={() => removeFromCart(product)}
         >
-          Remove item
+          Remove {count > 1 ? `items` : `item`}
         </button>
       </div>
     </div>

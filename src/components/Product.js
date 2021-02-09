@@ -1,9 +1,12 @@
-import React from "react";
+import { React, useState } from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions";
-import { fixPrice } from "../helper";
+import { fixPrice, createOptions } from "../helper";
+import Select from "react-select";
 
 const Product = ({ product, addToCart }) => {
+  const [selectedOption, setSelectedOption] = useState(createOptions(1, 5)[0]);
+
   return (
     <div className="product flex items-center">
       <div className="product__image w-1/2">
@@ -16,6 +19,13 @@ const Product = ({ product, addToCart }) => {
         <h3 className="product__price text-left text-lg my-4">
           €{fixPrice(product.price)}
         </h3>
+
+        <Select
+          options={createOptions(1, 5)}
+          defaultValue={selectedOption}
+          onChange={setSelectedOption}
+          className="w-16"
+        />
 
         <button
           className="bg-green-700 rounded text-white float-left mt-4 py-2 px-4"
