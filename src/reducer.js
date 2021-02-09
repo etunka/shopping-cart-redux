@@ -2,14 +2,7 @@ import { actionTypes } from "./actions";
 
 const initialState = {
   products: [],
-  shoppingCartItems: [
-    {
-      image:
-        "https://www.123planten.nl/media/catalog/product/cache/849c18a8c18231e9e60068f97f2b6ad6/a/l/alocasia_zebrina_kamerplant.jpg",
-      title: "alocasia",
-      price: "30",
-    },
-  ],
+  shoppingCartItems: [],
 };
 
 export default function appReducer(state = initialState, action) {
@@ -24,6 +17,37 @@ export default function appReducer(state = initialState, action) {
         ...state,
         shoppingCartItems: action.payload,
       };
+    case actionTypes.addToCart: {
+      const itemIndex = state.shoppingCartItems.findIndex(
+        (a) => a.product.id === action.payload.id
+      );
+      // if already in cart +1 on count
+      if (itemIndex >= 0) {
+        state.shoppingCartItems[itemIndex].count++;
+
+        return {
+          ...state,
+          shoppingCartItems: [...state.shoppingCartItems],
+        };
+      }
+
+      return {
+        ...state,
+        shoppingCartItems: [
+          ...state.shoppingCartItems,
+          { product: action.payload, count: 1 },
+        ],
+      };
+    }
+    // case actionTypes.removeFromCart:
+    //   return {
+    //     ...state,
+    //     shoppingCartItems: [
+    //         ...state.shoppingCartItems,
+
+    //     ]
+    //   };
+
     default:
       return state;
   }

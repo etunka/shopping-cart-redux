@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Product } from "./Product";
+import Product from "./Product";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 
@@ -16,14 +16,7 @@ const ProductsList = ({ products, setProducts }) => {
     <div>
       <h1 className="text-3xl font-bold">Products</h1>
       {products.map((product) => {
-        return (
-          <Product
-            key={product.id}
-            image={product.imageUrl}
-            title={product.title}
-            price={product.price}
-          />
-        );
+        return <Product key={product.id} product={product} />;
       })}
     </div>
   );

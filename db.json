@@ -5,31 +5,31 @@
         "id": 4,
         "title": "Alocasia zebrina",
         "imageUrl": "https://www.123planten.nl/media/catalog/product/cache/849c18a8c18231e9e60068f97f2b6ad6/a/l/alocasia_zebrina_kamerplant.jpg",
-        "price": "19,00"
+        "price": 19
       },
       {
         "id": 2,
         "title": "Strelitzia nicolai",
         "imageUrl": "https://www.123planten.nl/media/catalog/product/cache/849c18a8c18231e9e60068f97f2b6ad6/d/p/dpstrelitz-19.jpg",
-        "price": "30,00"
+        "price": 30
       },
       {
         "id": 3,
         "title": "Calathea orbifolia",
         "imageUrl": "https://www.123planten.nl/media/catalog/product/cache/849c18a8c18231e9e60068f97f2b6ad6/c/a/calathea_orbifolia_kamerplant_4.jpg",
-        "price": "24,00"
+        "price": 24.95
       },
       {
         "id": 5,
         "title": "Dracaena marginata",
         "imageUrl": "https://www.123planten.nl/media/catalog/product/cache/849c18a8c18231e9e60068f97f2b6ad6/d/r/drmar0963.jpg",
-        "price": "36,00"
+        "price": 36
       },
       {
         "id": 1,
         "title": "Fatsia japonica",
         "imageUrl": "https://www.123planten.nl/media/catalog/product/cache/849c18a8c18231e9e60068f97f2b6ad6/s/p/speciale_fatsia_japonica_kamerplant.webp",
-        "price": "18,00"
+        "price": 18
       }
     ]
   }
